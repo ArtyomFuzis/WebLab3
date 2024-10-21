@@ -3,9 +3,10 @@
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ace="http://www.icefaces.org/icefaces/components"
+      xmlns:p="http://primefaces.org/ui"
       lang="ru">
 
-<head>
+<h:head>
     <link rel="icon" type="image/png" href="${facesContext.externalContext.requestContextPath}/img/favicon.png"></link>
     <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/index.css"></link>
     <title>Лабораторная работа №2</title>
@@ -13,13 +14,13 @@
             src="https://code.jquery.com/jquery-3.7.1.js"
             integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
             crossorigin="anonymous"></script>
-    <script src="index.js" charset="utf-8"></script>
-</head>
+    <script src="${facesContext.externalContext.requestContextPath}/index.js" charset="utf-8"></script>
+</h:head>
 <h:body>
     <header style="height: 120px">
         <div style="width:85%; float: left;">
             <h2>Лабораторная работа №2</h2>
-            <h4>Выполнил: Назин Артем Аркадьевич P3207, ИСУ: 365395, вариант: 365395</h4>
+            <h4>Выполнил: Назин Артем Аркадьевич P3207, ИСУ: 365395, вариант: 430333</h4>
         </div>
         <div id="time_div">
             <div id="time_field">00:00:00</div>
@@ -29,9 +30,12 @@
         <table>
             <tr>
                 <td>Выберите X:</td>
-                <td colspan="5" rowspan="3">
+                <td colspan="5">
                     <!--<div class="check_x ctrl"><input class="ch_x" type="checkbox"></input><span class="check_txt">-5</span></div>-->
-                    <ace:sliderEntry min="10"/>
+                    <!--<ace:sliderEntry min="10"/>-->
+                    <ace:menuBar autoSubmenuDisplay="true"
+                                 styleClass="menuBar">
+                    </ace:menuBar>
                 </td>
 
                 <td colspan="4" rowspan="7">
@@ -82,31 +86,12 @@
             </tr>
             <tr>
                 <td>Выберите R:</td>
-                <td>
-                    <div class="check_r ctrl"><input class="ch_r" type="checkbox"></input><span class="radio_txt">1</span></div>
-                </td>
-                <td>
-                    <div class="check_r ctrl"><input class="ch_r" type="checkbox"></input><span class="radio_txt">1.5</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="check_r ctrl"><input class="ch_r" type="checkbox"></input><span class="radio_txt">2</span></div>
+                <td colspan="3">
+                    <p:spinner class = "inp_y"  min="-2" max="2"/>
                 </td>
                 <td></td>
                 <td></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td>
-                    <div class="check_r ctrl"><input class="ch_r" type="checkbox"></input><span class="radio_txt">2.5</span>
-                    </div>
-                </td>
-                <td>
-                    <div class="check_r ctrl"><input class="ch_r" type="checkbox"></input><span class="radio_txt">3</span></div>
-                </td>
-                <td></td>
-                <td></td>
-                <td></td>
+
             </tr>
             <tr>
                 <td></td>
@@ -134,7 +119,6 @@
                         </table>
                     </div>
                 </td>
-
             </tr>
         </table>
     </h:form>
