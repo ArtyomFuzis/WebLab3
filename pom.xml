@@ -35,19 +35,24 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
+            <groupId>javax.faces</groupId>
+            <artifactId>jsf-impl</artifactId>
+            <version>1.2_15-06</version>
+        </dependency>
+        <dependency>
             <groupId>org.icefaces</groupId>
             <artifactId>icefaces-compat</artifactId>
-            <version>3.0.0</version>
+            <version>3.3.0</version>
         </dependency>
         <dependency>
             <groupId>org.icefaces</groupId>
             <artifactId>icefaces-ace</artifactId>
-            <version>3.0.0</version>
+            <version>3.3.0</version>
         </dependency>
         <dependency>
             <groupId>org.icefaces</groupId>
             <artifactId>icefaces</artifactId>
-            <version>3.0.0</version>
+            <version>3.3.0</version>
         </dependency>
 
 
