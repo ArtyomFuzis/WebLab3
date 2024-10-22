@@ -3,4 +3,14 @@
               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
               xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
                                   https://jakarta.ee/xml/ns/jakartaee/web-facesconfig_3_0.xsd">
+    <navigation-rule>
+        <from-view-id>/pages/inputname.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>sayHello</from-outcome>
+            <to-view-id>/pages/greeting.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <to-view-id>/pages/goodbye.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>
