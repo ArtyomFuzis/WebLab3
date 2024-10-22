@@ -44,7 +44,7 @@ img
 .inp_y
 {
     width: 100%;
-    padding: 0.5%;
+    padding: 1%;
     border: 2px solid #FF1800	;
     box-shadow: 0 3px 10px #a94057;
     border-radius: 8px;
@@ -58,7 +58,7 @@ img
 }
 #submit
 {
-    width: 100%;
+    width: 102.5%;
     text-align: center;
     cursor: pointer;
     background-color: #37B6CE;
@@ -70,7 +70,6 @@ img
     font-family: sans-serif;
     box-shadow: 0 5px 15px #193047;
     border-radius: 10px;
-    margin: 0;
 }
 #submit:hover
 {
@@ -105,7 +104,7 @@ table input
 }
 #res_table_div
 {
-    width: 100%;
+    width: 101%;
     padding: 0.5%;
     border: 2px solid #FF1800;
     box-shadow: 0 3px 10px #a94057;
@@ -118,6 +117,7 @@ table input
 #img
 {
     margin-top: 10%;
+    margin-left: 30%;
 }
 #time_field
 {
@@ -132,4 +132,14 @@ table input
     margin-left: 10%;
     overflow:auto;
     height: 60%;
+}
+.ice
+{
+    width: 100%;
+
+}
+.ui-spinner-input
+{
+    width: 92%;
+    margin-left: -2.5%;
 }
