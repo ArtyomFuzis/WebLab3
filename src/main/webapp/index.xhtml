@@ -2,14 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:ace="http://www.icefaces.org/icefaces/components"
       xmlns:p="http://primefaces.org/ui"
       lang="ru">
 
 <h:head>
     <link rel="icon" type="image/png" href="${facesContext.externalContext.requestContextPath}/img/favicon.png"></link>
     <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/index.css"></link>
-    <title>Лабораторная работа №2</title>
+    <title>Лабораторная работа №3</title>
     <script
             src="https://code.jquery.com/jquery-3.7.1.js"
             integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
@@ -22,23 +21,17 @@
             <h2>Лабораторная работа №3</h2>
             <h4>Выполнил: Назин Артем Аркадьевич P3207, ИСУ: 365395, вариант: 430333</h4>
         </div>
-        <div id="time_div">
-            <div id="time_field">00:00:00</div>
-        </div>
     </header>
     <h:form>
         <table>
-            <tr>
+            <tr style="height: 75px">
                 <td>Выберите X:</td>
                 <td colspan="3">
-                    <!--<div class="check_x ctrl"><input class="ch_x" type="checkbox"></input><span class="check_txt">-5</span></div>-->
-                    <!--<ace:sliderEntry min="10"/>-->
-                    <div class="inp_y">
-                        <ace:sliderEntry showLabels="true" min="-2" max="2" class = "ice" name="x" length="460px" style="margin-left: 12px" />
-                    </div>
+                    <p:spinner class = "inp_y sp_x"  min="-2" max="2" stepFactor="1" value="#{p_bean.x}"/>
                 </td>
-
-                <td colspan="2" rowspan="7">
+                <td></td>
+                <td></td>
+                <td colspan="4" rowspan="6">
                     <svg width="500"
                          height="500"
                          id="img"
@@ -75,38 +68,42 @@
                     </svg>
                 </td>
             </tr>
-            <tr>
+            <tr style="height: 75px">
                 <td>Набирите Y:</td>
                 <td colspan="3">
-                    <!--<input id="inp_y" type="text">-->
-                    <h:inputText class="inp_y" name="y">
+                    <h:inputText class="inp_y com_y" value="#{p_bean.y}">
 
                     </h:inputText>
                 </td>
-                <td></td>
-                <td></td>
             </tr>
-            <tr>
+            <tr style="height: 75px">
                 <td>Выберите R:</td>
                 <td colspan="3">
-                    <p:spinner class = "inp_y"  min="1" max="3" name = "r"/>
+                    <p:spinner class = "inp_y sp_r"  min="1" max="3" stepFactor="0.5" value="#{p_bean.r}">
+                        <p:ajax update="displayData" />
+                    </p:spinner>
                 </td>
                 <td></td>
                 <td></td>
 
             </tr>
-            <tr>
+            <tr style="height: 75px">
                 <td></td>
                 <td colspan="3">
-                    <!--<button id="submit" type="submit">Отправить</button>-->
-                    <h:commandButton value="Отправить" class="submit" action="sayHello">
-                    </h:commandButton>
+                    <p:commandButton ajax="true" class= "frm_submit" value="Отправить" action="#{p_bean.addPoint()}" update="displayData"/>
                 </td>
             </tr>
-            <tr>
+            <tr style="height: 75px">
                 <td></td>
                 <td colspan="3">
-                    <div id="row_res" hidden=""></div>
+                    <p:commandButton ajax="true" class= "frm_reset" value="Сброс" action="#{p_bean.clearPoints()}" update="displayData"/>
+                </td>
+            </tr>
+            <tr style="height: 75px">
+                <td></td>
+                <td colspan="3">
+                    <h:outputText id="row_res" class="row_res" hidden="">
+                    </h:outputText>
                 </td>
             </tr>
             <tr>
@@ -126,5 +123,10 @@
             </tr>
         </table>
     </h:form>
+    <h:panelGroup id="displayData">
+        <h:outputScript>
+            update(#{p_bean.points})
+        </h:outputScript>
+    </h:panelGroup>
 </h:body>
 </html>

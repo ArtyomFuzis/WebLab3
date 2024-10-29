@@ -44,7 +44,7 @@ img
 .inp_y
 {
     width: 100%;
-    padding: 1%;
+    padding: 0.5%;
     border: 2px solid #FF1800	;
     box-shadow: 0 3px 10px #a94057;
     border-radius: 8px;
@@ -56,9 +56,9 @@ img
 {
     background-color: #65E080;
 }
-.submit
+.frm_submit
 {
-    width: 102.5%;
+    width: 100%;
     text-align: center;
     cursor: pointer;
     background-color: #37B6CE;
@@ -70,8 +70,25 @@ img
     font-family: sans-serif;
     box-shadow: 0 5px 15px #193047;
     border-radius: 10px;
+    margin: 0;
 }
-.submit:hover
+.frm_reset
+{
+    width: 100%;
+    text-align: center;
+    cursor: pointer;
+    background-color: #a94057;
+    border: none;
+    color: white;
+    padding: 1.5%;
+    font-size: 16px;
+    font-weight: bold;
+    font-family: sans-serif;
+    box-shadow: 0 5px 15px #193047;
+    border-radius: 10px;
+    margin: 0;
+}
+#submit:hover
 {
     background-color: #48C7DF;
 }
@@ -104,7 +121,7 @@ table input
 }
 #res_table_div
 {
-    width: 101%;
+    width: 100%;
     padding: 0.5%;
     border: 2px solid #FF1800;
     box-shadow: 0 3px 10px #a94057;
@@ -117,7 +134,6 @@ table input
 #img
 {
     margin-top: 10%;
-    margin-left: 30%;
 }
 #time_field
 {
@@ -132,14 +148,4 @@ table input
     margin-left: 10%;
     overflow:auto;
     height: 60%;
-}
-.ice
-{
-    width: 100%;
-
-}
-.ui-spinner-input
-{
-    width: 92%;
-    margin-left: -2.5%;
 }
