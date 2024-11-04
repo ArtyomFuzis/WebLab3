@@ -109,7 +109,7 @@ table input
     cursor: pointer;
 }
 
-#row_res
+.row_res
 {
     width: 100%;
     padding: 0.5%;
@@ -148,4 +148,18 @@ table input
     margin-left: 10%;
     overflow:auto;
     height: 60%;
+}
+.com_y
+{
+    text-align: right;
+    color: #495057;
+    font-size: 15px;
+}
+.inp_y > .ui-button
+{
+    cursor: pointer;
+}
+h2
+{
+    color: white;
 }

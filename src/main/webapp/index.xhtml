@@ -17,8 +17,8 @@
 </h:head>
 <h:body>
     <header style="height: 120px">
-        <div style="width:85%; float: left;">
-            <h2>Лабораторная работа №3</h2>
+        <div>
+            <a href="./start.jsf" style="text-decoration: none;"><h2>Лабораторная работа №3</h2></a>
             <h4>Выполнил: Назин Артем Аркадьевич P3207, ИСУ: 365395, вариант: 430333</h4>
         </div>
     </header>
@@ -59,11 +59,11 @@
                         <text x="97.5%" y="55.5%">y</text>
                         <path d="M 385 195 l 15 5 l -15 5 z" stroke="#111111" fill="#111111"></path>
                         <path d="M 205 15 l -5 -15 l -5 15 z" stroke="#111111" fill="#111111"></path>
-                        <path d="M 200 200 L 120 200 A 80 80 0 0 0 200 280 Z" fill-opacity="0.6" stroke="#111111"
+                        <path d="M 200 200 L 120 200 A 80 80 0 0 0 200 280 Z" fill-opacity="0.4" stroke="#111111"
                               fill="blue" stroke-width="2"></path>
-                        <path d="M 200 200 L 200 40 L 40 40 L 40 200 Z" fill-opacity="0.6" stroke="#111111" fill="blue"
+                        <path d="M 200 200 L 200 40 L 40 40 L 40 200 Z" fill-opacity="0.4" stroke="#111111" fill="blue"
                               stroke-width="2"></path>
-                        <path d="M 200 200 L 280 200 L 200 40 Z" fill-opacity="0.6" stroke="#111111" fill="blue"
+                        <path d="M 200 200 L 280 200 L 200 40 Z" fill-opacity="0.4" stroke="#111111" fill="blue"
                               stroke-width="2"></path>
                     </svg>
                 </td>
@@ -71,8 +71,17 @@
             <tr style="height: 75px">
                 <td>Набирите Y:</td>
                 <td colspan="3">
-                    <h:inputText class="inp_y com_y" value="#{p_bean.y}">
-
+                    <!--<h:inputText id="YY" class="inp_y com_y" value="#{p_bean.y}"  required="true">
+                        <f:validateDoubleRange minimum="-5" maximum="5"/>
+                    </h:inputText>-->
+                    <h:inputText
+                            id="YY"
+                            class="inp_y com_y"
+                            value="#{p_bean.y}"
+                            required="true"
+                            validatorMessage="Y должно быть числом от -5 до 5"
+                            converterMessage="Y должно быть числом!!!">
+                        <f:validateDoubleRange minimum="-5" maximum="5"/>
                     </h:inputText>
                 </td>
             </tr>
@@ -90,20 +99,20 @@
             <tr style="height: 75px">
                 <td></td>
                 <td colspan="3">
-                    <p:commandButton ajax="true" class= "frm_submit" value="Отправить" action="#{p_bean.addPoint()}" update="displayData"/>
+                    <h:commandButton id="submit" ajax="true" class= "frm_submit" value="Отправить" action="#{p_bean.addPoint()}" update="displayData"/>
                 </td>
             </tr>
             <tr style="height: 75px">
                 <td></td>
                 <td colspan="3">
-                    <p:commandButton ajax="true" class= "frm_reset" value="Сброс" action="#{p_bean.clearPoints()}" update="displayData"/>
+                    <!--<h:commandButton ajax="true"/>-->
+                    <h:commandButton ajax="true" class= "frm_reset" value="Сброс" action="#{p_bean.clearPoints()}" update="displayData"/>
                 </td>
             </tr>
             <tr style="height: 75px">
                 <td></td>
                 <td colspan="3">
-                    <h:outputText id="row_res" class="row_res" hidden="">
-                    </h:outputText>
+                    <h:message for="YY" id="row_res" class="row_res" showSummary="true" showDetail="false"/>
                 </td>
             </tr>
             <tr>

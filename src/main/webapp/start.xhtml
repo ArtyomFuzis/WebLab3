@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      lang="ru">
+    <h:head>
+        <link rel="icon" type="image/png" href="${facesContext.externalContext.requestContextPath}/img/favicon.png"></link>
+        <link rel="stylesheet" type="text/css" href="${facesContext.externalContext.requestContextPath}/start.css"></link>
+        <title>Лабораторная работа №3</title>
+        <script
+                src="https://code.jquery.com/jquery-3.7.1.js"
+                integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+                crossorigin="anonymous"></script>
+        <script src="${facesContext.externalContext.requestContextPath}/clock.js" charset="utf-8"></script>
+
+    </h:head>
+    <h:body>
+
+        <header style="height: 120px; display: block">
+            <div>
+                <h2>Лабораторная работа №3</h2>
+                <h4>Выполнил: Назин Артем Аркадьевич P3207, ИСУ: 365395, вариант: 430333</h4>
+            </div>
+        </header>
+        <div id="clock"></div>
+        <h:form class="main_button_frm">
+            <h:commandButton value="На главную" action="go-index" class="main_button"/>
+        </h:form>
+    </h:body>
+
+</html>
+

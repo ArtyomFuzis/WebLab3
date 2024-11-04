@@ -1,15 +1,24 @@
 package org.lab3.wweblab3;
 
+import jakarta.persistence.*;
 import org.json.simple.JSONObject;
 import java.io.Serializable;
 import java.util.ArrayList;
-
+@Entity
+@Table(name="points")
 public class Point implements Serializable {
     private static final long serialVersionUID = 11551;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private Double x;
     private Double y;
     private Double r;
     private Boolean res;
+    public Point()
+    {
+
+    }
 
     public Double getX() {
         return x;
