@@ -4,6 +4,12 @@ import jakarta.persistence.*;
 import org.json.simple.JSONObject;
 import java.io.Serializable;
 import java.util.ArrayList;
+
+/**
+ * Ну это дока для класса, тут у нас объект (Entity) представляющий точку в БД с соответствующими методами
+ * (гетерами и сеттерами), а также конструкторами для получения точек как из БД, так и "вручную" при их добавлении.
+ * Кроме этого в классе содержится методы для расчета результатов и сериализации в JSON.
+ */
 @Entity
 @Table(name="points")
 public class Point implements Serializable {
@@ -72,6 +78,12 @@ public class Point implements Serializable {
         else if (x <= 0 && y >= 0) this.res = (x >= -r) && (y <= r);
         else this.res = false;
     }
+
+    /**
+     * Это просто документация для проекта лол
+     * @param data ArrayList объектов Point, который нужно сериализовать в JSON
+     * @return JSON для этой фигни
+     */
     public static String toJson(ArrayList<Point> data) {
         JSONObject write_arr = new JSONObject();
         for(int i = 0 ; i < data.size() ; i++)
