@@ -1,6 +1,7 @@
 package org.lab3.wweblab3;
 
 import org.junit.Test;
+import org.lab3.wweblab3.entities.Point;
 
 import static org.junit.jupiter.api.Assertions.*;
 public class PointTest {

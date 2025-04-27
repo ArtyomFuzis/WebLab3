@@ -115,6 +115,30 @@
                     <h:message for="YY" id="row_res" class="row_res" showSummary="true" showDetail="false"/>
                 </td>
             </tr>
+            <tr style="height: 75px">
+                <td>Всего создано точек:</td>
+                <td colspan="3">
+                    <h:outputText value="#{c.counterAll}"/>
+                </td>
+            </tr>
+            <tr style="height: 75px">
+                <td>Попаданий в область:</td>
+                <td colspan="3">
+                    <h:outputText value="#{c.counterSuccess}"/>
+                </td>
+            </tr>
+
+            <tr style="height: 75px">
+                <td>Текущая площадь закрашенной фигуры:</td>
+                <td colspan="3">
+                    <h:outputText value="#{a.area}"/>
+                </td>
+            </tr>
+            <tr style="height: 75px; color: crimson;">
+                <td colspan="4">
+                    <h:outputText value="#{c.counterMissesComment}"/>
+                </td>
+            </tr>
             <tr>
                 <td></td>
                 <td colspan="3">

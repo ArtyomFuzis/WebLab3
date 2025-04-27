@@ -1,4 +1,4 @@
-package org.lab3.wweblab3;
+package org.lab3.wweblab3.entities;
 
 import jakarta.persistence.*;
 import org.json.simple.JSONObject;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
  * Кроме этого в классе содержится методы для расчета результатов и сериализации в JSON.
  */
 @Entity
-@Table(name="points")
+@Table(name="POINTS")
 public class Point implements Serializable {
     private static final long serialVersionUID = 11551;
     @Id
